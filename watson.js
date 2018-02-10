@@ -1,4 +1,3 @@
-var http = require('http');
 var SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');
 var fs = require('fs');
 var speech_to_text = new SpeechToTextV1({
@@ -6,9 +5,9 @@ var speech_to_text = new SpeechToTextV1({
   password: '1VzZaPldVTHd'
 });
 
-var files = ['audio-file.flac'];
-
-for (var file in files) {
+// Takes in a string that represents the name of an audio file and returns
+// its transcription
+function addFiles(var file) {
   var params = {
     audio: fs.createReadStream(files[file]),
     content_type: 'audio/flac',
@@ -19,18 +18,9 @@ for (var file in files) {
   };
   speech_to_text.recognize(params, function(error, transcript) {
     if (error)
-      console.log('Error:', error);
+      return error;
     else
-      console.log(JSON.stringify(transcript, null, 2));
+      return json.results[0].alternatives[0].transcript;
   });
 }
-
-http.createServer(function(req, res) {
-  res.writeHead(200, {
-    'Content-Type': 'text/plain'
-  });
-  res.end(JSON.stringify(json.results[0].alternatives[0].transcript));
-}).listen(3456);
-
-console.log('Server running at http://localhost:3456/');
 
