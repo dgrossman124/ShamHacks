@@ -1,3 +1,4 @@
+var ffmpeg = require ('ffmpeg');
 var SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');
 var fs = require('fs');
 var speech_to_text = new SpeechToTextV1({
@@ -5,9 +6,12 @@ var speech_to_text = new SpeechToTextV1({
   password: '1VzZaPldVTHd'
 });
 
+console.log('hello');
+
 // Takes in a string that represents the name of an audio file and returns
 // its transcription
-function addFiles(var file) {
+function addFiles(file) {
+  console.log('wait!');
   var params = {
     audio: fs.createReadStream(files[file]),
     content_type: 'audio/flac',
@@ -23,4 +27,6 @@ function addFiles(var file) {
       return json.results[0].alternatives[0].transcript;
   });
 }
+
+console.log('goodbye');
 
