@@ -38,6 +38,6 @@ exports.insertIntoDatabase = function (isAudio, filename, title, text, tags = nu
     connection.query(insertQuery, function (err, result) {
       if (err) throw err;
       console.log("1 record inserted");
-});
+    });
   });
 }
