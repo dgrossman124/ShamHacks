@@ -7,7 +7,7 @@ var http = require('http'),
   mysql = require('mysql');
 
 	http.createServer(function(req, res){
-	    fs.readFile('main.html',function (err, data){
+	    fs.readFile('submit.html',function (err, data){
 	        res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
 	        res.write(data);
 	        res.end();
