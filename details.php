@@ -14,7 +14,7 @@
         $tableName = $_GET['table'];
         echo '<header>'.$title.'</header>';
         if ($tableName === "audio") {
-          $stmt = $mysqli->prepare("SELECT text FROM audio WHERE title=?");
+          $stmt = $mysqli->prepare("SELECT text, filename FROM audio WHERE title=?");
         }
         else {
           $stmt = $mysqli->prepare("SELECT text FROM video WHERE title=?");
@@ -25,10 +25,10 @@
         }
         $stmt->bind_param('s', $title);
         $stmt->execute();
-        $stmt->bind_result($text);
+        $stmt->bind_result($text, $file);
 
         $stmt->fetch();
-        echo $text;
+        echo '<source src="'.$file.'" type="'.mim_content_type($file).'"><br>'.$text;
         $stmt->close();
       ?>
     </article>
