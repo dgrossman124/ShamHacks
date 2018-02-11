@@ -13,6 +13,10 @@
       <div id = submit>
         <a href='submit.html'>Submit files here</a
       </div>
+      <form action="search.php" method="GET">
+        <input type="text" name="query" />
+        <input type="submit" value="Search" />
+      </form>
     </header>
     <table id="table">
       <tr>

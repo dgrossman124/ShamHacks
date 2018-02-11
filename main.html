@@ -8,19 +8,18 @@
 <body>
 
   <div class="container">
-    <header>
-      <h1>Files</h1>
-      <a href='submit.html'>Submit files here</a>
-    </header>
     <table id="table">
       <tr>
-        <th>Date Uploaded</th>
+        <th>Title</th>
         <th>Tags</th>
         <th>Participants</th>
+        <th>Date Uploaded</th>
       </tr>
       <?php
-        include 'main.php';
-        getData();
+        include('database.php');
+        include('getSearchResults.php
+        $query = $_GET["query"];
+        searchForResult($query);
       ?>
   </div>
   <script src="../main.js"></script>
