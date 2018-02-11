@@ -26,7 +26,8 @@
         $stmt->bind_param('s', $title);
         $stmt->execute();
         $stmt->bind_result($text);
-        echo 'Actual String'.$text;
+        $stmt->fetch();
+        echo $text;
         $stmt->close();
       ?>
     </article>
