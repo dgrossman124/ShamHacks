@@ -26,12 +26,14 @@
         $stmt->bind_param('s', $title);
         $stmt->execute();
         $stmt->bind_result($text);
+
         $stmt->fetch();
         echo $text;
         $stmt->close();
       ?>
     </article>
   </div>
+  <a href = "main.php" </a>
 </body>
 
 </html>
