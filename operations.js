@@ -1,6 +1,5 @@
-var mysql = require('mysql');
-
-function connect() {
+require(['mysql'], function ($) {
+  function connect() {
   var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -8,7 +7,7 @@ function connect() {
     database: "ShamHacks"
   });
   return con;
-}
+}});
 
 // isAudio represents which table this is going INTO
 // default arguments for tags and participants are null
