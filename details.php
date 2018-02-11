@@ -33,6 +33,11 @@
       ?>
     </article>
   </div>
+  <textarea rows = "10" cols = "100">
+    <?php
+      echo $text;
+    ?>
+  </textarea>
   <a href = "main.php">Back to Home</a>
 </body>
 
