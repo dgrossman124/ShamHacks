@@ -11,7 +11,7 @@
         include('database.php');
 
         $title = $_GET['title'];
-        $tableName = $_POST['table'];
+        $tableName = $_GET['table'];
         echo '<header>'.title.'</header>';
         $stmt = $mysqli->prepare("SELECT text FROM ".$tableName." WHERE title=".$title);
         if(!$stmt){
