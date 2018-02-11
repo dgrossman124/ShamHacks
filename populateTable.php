@@ -28,7 +28,7 @@ function getData($isAudio, $mysqli) {
        else {
          $_POST['table'] = "video";
        }
-       printf("<tr><td> %s </td><td> %s</td><td> %s</td><td>%s></td> <td> <a href=\"details.php?title=" .$title. "&table=".$tableName.">Details</a>
+       printf("<tr><td> %s </td><td> %s</td><td> %s</td><td>%s></td> <td> <a href=\"details.php?title=" .$title. "&table=".$tableName."\">Details</a>
 </tr>\n",
        htmlspecialchars($title),
        htmlspecialchars($tags),
