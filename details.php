@@ -31,6 +31,7 @@
       ?>
     </article>
   </div>
+  <a href = "main.php" </a>
 </body>
 
 </html>
