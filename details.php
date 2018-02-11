@@ -23,12 +23,13 @@
           printf("Query Prep Failed: %s\n", $mysqli->error);
           exit;
         }
+
         $stmt->bind_param('s', $title);
         $stmt->execute();
         $stmt->bind_result($text, $file);
-
         $stmt->fetch();
-        $path = pathinfo($audioFile['name'], PATHINFO_EXTENSION);
+
+        $path = pathinfo($file, PATHINFO_EXTENSION);
         if ($path === 'flac') {
           $new_file = str_replace('flac', 'mp3', $file);
           $command = "/usr/local/bin/sox {$file} {$new_file}";
