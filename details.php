@@ -33,7 +33,7 @@
       ?>
     </article>
   </div>
-  <a href = "main.php" </a>
+  <a href = "main.php">Back to Home</a>
 </body>
 
 </html>
