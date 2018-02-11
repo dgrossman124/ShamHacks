@@ -6,6 +6,14 @@ var http = require('http'),
   fs = require('fs'),
   mysql = require('mysql');
 
+	http.createServer(function(req, res){
+	    fs.readFile('main.html',function (err, data){
+	        res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+	        res.write(data);
+	        res.end();
+	    });
+	}).listen(8000);
+
 // Make a simple fileserver for all of our static content.
 // Everything underneath <STATIC DIRECTORY NAME> will be served.
 var app = http.createServer(function(req, resp) {
