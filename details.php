@@ -36,10 +36,12 @@
           exec($command);
           $file = $new_file;
         }
-        echo '<source src="' . $file . '" type="' . mime_content_type($file) . '"><br>' . $text;
+        echo '<source src="' . $file . '" type="' . mime_content_type($file) . '">';
         $stmt->close();
       ?>
     </audio>
+    <br>
+    <p> <?php echo $text ?> </p>
   </div>
   <a href = "main.php">Back to Home</a>
 </body>
