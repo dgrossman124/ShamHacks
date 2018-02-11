@@ -1,6 +1,5 @@
-var mysql = require('mysql');
-
-function connect() {
+require(['mysql'], function ($) {
+  function connect() {
   var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -8,14 +7,14 @@ function connect() {
     database: "ShamHacks"
   });
   return con;
-}
+}});
 
 // isAudio represents which table this is going INTO
 // default arguments for tags and participants are null
 // Usage:
 // var operations = require("./operations");
 // operations.insertIntoDatabase(true, "www.google.com", "google", "This is google", "goog");
-exports.insertIntoDatabase = function (isAudio, filename, title, text, tags = null, participants = null) {
+module.exports = function insertIntoDatabase(isAudio, filename, title, text, tags = null, participants = null) {
   connection = connect();
   connection.connect(function(err) {
     if (err) throw err;
