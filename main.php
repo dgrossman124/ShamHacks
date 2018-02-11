@@ -31,7 +31,7 @@
         else {
           $tableName = "video";
         }
-        $stmt = $mysqli->prepare("SELECT title, tags, participants, datetime from " .$tableNAme ." order by datetime");
+        $stmt = $mysqli->prepare("SELECT title, tags, participants, datetime from " .$tableName ." order by datetime");
         if(!$stmt){
       	   printf("Query Prep Failed: %s\n", $mysqli->error);
       	    exit;
@@ -51,7 +51,7 @@
           }
 
           $stmt->close();
-        }
+        //}
       ?>
   </div>
   <script src="../main.js"></script>
