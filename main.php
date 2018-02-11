@@ -6,7 +6,7 @@
 </head>
 
 <body>
-
+<link rel="stylesheet" type="text/css" href="design.css">
   <div class="container">
     <header>
       <h1>Files</h1>
@@ -14,12 +14,18 @@
     </header>
     <table id="table">
       <tr>
-        <th>Date Uploaded</th>
+        <th>Title</th>
         <th>Tags</th>
         <th>Participants</th>
+        <th>Date Uploaded</th>
       </tr>
       <?php
-
+      include('database.php');
+      include('populateTable.php');
+      getData(true, $mysqli);
+      getData(false, $mysqli);
+      
+      /*
       include('database.php');
 
       //function getData($isAudio) {
@@ -31,12 +37,11 @@
         else {
           $tableName = "video";
         }
-        $stmt = $mysqli->prepare("SELECT title, tags, participants, datetime from " .$tableNAme ." order by datetime");
+        $stmt = $mysqli->prepare("SELECT title, tags, participants, datetime from " .$tableName ." order by datetime");
         if(!$stmt){
       	   printf("Query Prep Failed: %s\n", $mysqli->error);
       	    exit;
           }
-
           $stmt->execute();
 
           $stmt->bind_result($title, $tags, $participants, $datetime);
@@ -51,7 +56,8 @@
           }
 
           $stmt->close();
-        }
+        //}
+        */
       ?>
   </div>
   <script src="../main.js"></script>
