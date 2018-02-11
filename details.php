@@ -6,7 +6,7 @@
 <body>
 
   <div class="container" id="upload">
-    <article>
+    <audio controls>
       <?php
         include('database.php');
 
@@ -28,12 +28,19 @@
         $stmt->bind_result($text, $file);
 
         $stmt->fetch();
-        echo '<source src="'.$file.'" type="'.mime_content_type($file).'"><br>'.$text;
+        $path = pathinfo($audioFile['name'], PATHINFO_EXTENSION);
+        if ($path === 'flac') {
+          $new_file = str_replace('flac', 'mp3', $file);
+          $command = "/usr/local/bin/sox {$file} {$new_file}";
+          $file = $new_file;
+        }
+        echo '<source src="' . $file . '" type="' . mime_content_type($file) . '"><br>' . $text;
         $stmt->close();
       ?>
-    </article>
+    </audio>
   </div>
   <a href = "main.php">Back to Home</a>
 </body>
 
 </html>
+
