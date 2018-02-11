@@ -11,11 +11,14 @@
         <h1>Upload a File</h1>
         <a href='main.php'>Back to Home</a>
       </header>
-      <p>Title: <input type="text" name="title" id="title"></p>
-      <input name="myFile" type="file" id="myFsubsuile"><br>
-      <input type="radio" name="fileType" value="audio">Audio
-      <input type="radio" name="fileType" value="video">Video
-      <input type="button" value="Submit" onclick="submit()"/>
+      <form action="add_file.php" method="post" enctype="multipart/form-data">
+        <p>Title: <input type="text" name="title" id="title"></p>
+        <input type="file" name="audioFile" id="audioFile"><br>
+        <input type="radio" name="fileType" value="audio">Audio
+        <input type="radio" name="fileType" value="video">Video
+        <!-- onclick="submit()" -->
+        <input type="submit" value="Submit"/>
+      </form>
     </article>
     <p id="paragraph">
 
