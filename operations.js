@@ -14,7 +14,7 @@ require(['mysql'], function ($) {
 // Usage:
 // var operations = require("./operations");
 // operations.insertIntoDatabase(true, "www.google.com", "google", "This is google", "goog");
-exports.insertIntoDatabase = function (isAudio, filename, title, text, tags = null, participants = null) {
+module.exports = function insertIntoDatabase(isAudio, filename, title, text, tags = null, participants = null) {
   connection = connect();
   connection.connect(function(err) {
     if (err) throw err;

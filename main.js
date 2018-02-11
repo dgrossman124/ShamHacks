@@ -1,4 +1,6 @@
-var operations = require(["operations"], function display(tableName) {
+var operations = require("operations");
+
+function display(tableName) {
   connection = connect();
   connection.connect(function(err) {
     if (err) throw err;
@@ -14,8 +16,6 @@ var operations = require(["operations"], function display(tableName) {
       console.log("Table displayed");
     });
   });
-});
-
-
+}
 
 document.onload = display("audio");
