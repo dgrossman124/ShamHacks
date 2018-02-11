@@ -6,7 +6,7 @@
 </head>
 
 <body>
-
+ <link rel="stylesheet" type="text/css" href="design.css">
   <div class="container">
     <header>
       <h1>Files</h1>
