@@ -28,7 +28,7 @@
         $stmt->bind_result($text, $file);
 
         $stmt->fetch();
-        echo '<source src="'.$file.'" type="'.mim_content_type($file).'"><br>'.$text;
+        echo '<source src="'.$file.'" type="'.mime_content_type($file).'"><br>'.$text;
         $stmt->close();
       ?>
     </article>
