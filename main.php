@@ -10,7 +10,9 @@
   <div class="container">
     <header>
       <h1>Files</h1>
-      <a href='submit.html'>Submit files here</a>
+      <div id = submit>
+        <a href='submit.html'>Submit files here</a
+      </div>
     </header>
     <table id="table">
       <tr>
