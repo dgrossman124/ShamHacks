@@ -10,7 +10,7 @@
       <?php
         include('database.php');
 
-        $title = $_POST['title'];
+        $title = $_GET['title'];
         $tableName = $_POST['table'];
         echo '<header>'.title.'</header>';
         $stmt = $mysqli->prepare("SELECT text FROM ".$tableName." WHERE title=".$title);
