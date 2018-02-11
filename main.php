@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="design.css">
   <div class="container">
     <header>
-      <h1>Files</h1>
+      <h1>Veteran Interview Database</h1>
       <div id = submit>
         <a href='submit.html'>Submit files here</a
       </div>
@@ -31,6 +31,7 @@
       getData(true, $mysqli);
       getData(false, $mysqli);
       ?>
+    </table>
   </div>
   <script src="../main.js"></script>
 </body>

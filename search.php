@@ -6,8 +6,11 @@
 </head>
 
 <body>
-
+  <link rel="stylesheet" type="text/css" href="design.css">
   <div class="container">
+    <header>
+      <h1>Searh Results</h1>
+    </header>
     <table id="table">
       <tr>
         <th>Title</th>
@@ -21,7 +24,9 @@
         $query = $_GET["query"];
         searchForResult($query, $mysqli);
       ?>
+    </table>
   </div>
+  <a href = "main.php">Back to home </a>
   <script src="../main.js"></script>
 </body>
 
